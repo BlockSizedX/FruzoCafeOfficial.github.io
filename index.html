@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruzo Cafe - Fresh Juices & Delicious Treats</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="#home"><img src="images/logo.jpg" alt="Fruzo Cafe Logo"></a>
+                    <h1>Fruzo Cafe</h1>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#franchise" class="nav-link">Franchise</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to <span>Fruzo Cafe</span></h1>
+            <p class="hero-subtitle">Fresh Juices, Delicious Milkshakes & Refreshing Treats</p>
+            <a href="#menu" class="cta-button">Explore Our Menu</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero-image.jpg" alt="fruzo cafe image">
+            
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Fruzo Cafe</h2>
+                <p>Discover our story and passion for fresh ingredients</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Fruzo Cafe was founded with a simple mission: to serve the freshest, most delicious beverages made from high-quality ingredients. Our passion for flavor and commitment to excellence has made us a favorite destination for juice and shake lovers.</p>
+                    <p>We carefully select our fruits and ingredients to ensure every drink is packed with natural goodness and flavor. From our signature fresh juices to our indulgent milkshakes and faloodas, we craft each beverage with care and precision.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Fresh Ingredients</h4>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <h4>Made with Love</h4>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <h4>Premium Quality</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/store3.jpg" alt="fruzo cafe | BlockSizedX">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Menu</h2>
+                <p>Explore our wide selection of refreshing beverages</p>
+            </div>
+            
+            <!-- Menu Filter/Sort -->
+            <div class="menu-controls">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Items</button>
+                    <button class="filter-btn" data-filter="juice">Fresh Juice</button>
+                    <button class="filter-btn" data-filter="mojito">Mojito</button>
+                    <button class="filter-btn" data-filter="milkshake">Milkshake</button>
+                    <button class="filter-btn" data-filter="falooda">Falooda</button>
+                    <button class="filter-btn" data-filter="special">Fruzo Special</button>
+                </div>
+                <div class="sort-options">
+                    <label for="sort">Sort by:</label>
+                    <select id="sort">
+                        <option value="name">Name (A-Z)</option>
+                        <option value="price-low">Price (Low to High)</option>
+                        <option value="price-high">Price (High to Low)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Menu Items -->
+            <div class="menu-items" id="menu-items">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Franchise Section -->
+    <section class="franchise" id="franchise">
+        <div class="container">
+            <div class="section-header">
+                <h2>Franchise Opportunities</h2>
+                <p>Join the Fruzo Cafe family and bring our refreshing beverages to your community</p>
+            </div>
+            <div class="franchise-content">
+                <div class="franchise-info">
+                    <h3>Why Choose Fruzo Cafe?</h3>
+                    <p>With our proven business model, comprehensive training, and ongoing support, opening a Fruzo Cafe franchise is an excellent investment opportunity.</p>
+                    
+                    <div class="benefits">
+                        <div class="benefit">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Proven Business Model</h4>
+                            <p>Benefit from our established brand and successful operational strategies.</p>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Comprehensive Training</h4>
+                            <p>We provide extensive training for you and your staff to ensure success.</p>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-hands-helping"></i>
+                            <h4>Ongoing Support</h4>
+                            <p>Receive continuous support in marketing, operations, and product development.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="franchise-contact">
+                        <h4>Interested in a Franchise?</h4>
+                        <p>Contact us for more information about franchise opportunities in your area.</p>
+                        <a href="#contact" class="cta-button">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="franchise-image">
+                    <img src="images/store1.jpg" alt="BlockSizedX , fruzo cafe">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Beverage Street, City, State 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@fruzocafe.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Opening Hours</h4>
+                            <p>Monday - Sunday: 9:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="Fruzo Cafe Logo">
+                    <p>Fresh juices, delicious milkshakes, and refreshing treats made with love and premium ingredients.</p>
+                    <br>
+                    <p>Website developed and maintained by <a style="color: antiquewhite;" href="https://blocksizedx.github.io">BlockSizedX</a></p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#franchise">Franchise</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Fruzo Cafe. All rights reserved.</p>
+                <p>&copy; 2025 BlockSizedX | Website developed and maintained by <a style="color: antiquewhite;" href="https://blocksizedx.github.io">BlockSizedX</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
