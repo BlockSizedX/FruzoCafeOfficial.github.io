@@ -96,7 +96,7 @@ img {
     border-radius: 30px;
     font-weight: 500;
     transition: var(--transition);
-    border: none;
+    border: var(--primary) solid 2px;
     cursor: pointer;
     font-size: 1rem;
 }
@@ -107,6 +107,26 @@ img {
     box-shadow: var(--shadow);
 }
 
+
+.ctb-button {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: var(--transition);
+    border: var(--primary) solid 2px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.ctb-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    color: white;
+}
 .image-placeholder {
     background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
     height: 100%;
@@ -216,7 +236,14 @@ img {
     flex: 1;
     padding-right: 2rem;
 }
-
+@media (max-width: 768px) {
+    .hero-content {
+        margin-top: 30px;
+    }
+    .hero-image {
+        display: none;
+    }
+}
 .hero-title {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
@@ -272,6 +299,14 @@ img {
 .about-image {
     overflow: hidden;
 }
+@media (max-width: 768px) {
+    .about-image {
+        display: none;
+    }
+    .franchise-image {
+        display: none;
+    }
+}
 .features {
     display: flex;
     gap: 1.5rem;
@@ -312,6 +347,77 @@ img {
 .menu {
     padding: 100px 0;
     background-color: var(--light);
+}
+
+/* Branch Selector Styles */
+.branch-selector {
+    display: flex;
+    position: relative;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, rgba(230, 126, 34, 0.15) 0%, rgba(22, 160, 133, 0.15) 100%);
+    border: 2px solid var(--primary);
+    border-radius: 30px;
+    padding: 4px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.branch-fill {
+    position: absolute;
+    height: calc(100% - 8px);
+    background-color: var(--primary);
+    border-radius: 25px;
+    top: 4px;
+    left: 4px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 0;
+    box-shadow: 0 4px 15px rgba(236, 37, 60, 0.3);
+}
+
+.branch-btn {
+    flex: 1;
+    padding: 14px 25px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--secondary);
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+}
+
+.branch-btn.active {
+    color: var(--white);
+    background-color: var(--primary);
+
+}
+
+.branch-btn:hover {
+    color: var(--secondary-dark);
+}
+
+.branch-btn.active:hover {
+    color: var(--white);
+}
+
+.branch-name {
+    display: inline-block;
+}
+
+/* Responsive branch selector */
+@media (max-width: 576px) {
+    .branch-selector {
+        max-width: 100%;
+    }
+    
+    .branch-btn {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
 }
 
 .menu-controls {
@@ -363,79 +469,116 @@ img {
     cursor: pointer;
 }
 
-/* Menu Items Grid - Updated for 3 columns */
+/* Menu Items List Layout */
 .menu-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-/* Responsive adjustments for 3-column layout */
-@media (min-width: 1200px) {
-    .menu-items {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 1199px) and (min-width: 768px) {
-    .menu-items {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .menu-items {
-        grid-template-columns: 1fr;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .menu-item {
     background-color: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     transition: var(--transition);
 }
 
+.menu-item:last-child {
+    border-bottom: none;
+}
+
 .menu-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+    padding-left: 2rem;
+}
+
+.menu-item-left {
+    flex: 1;
+    margin-right: 2rem;
 }
 
 .menu-item-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid #eee;
+    padding: 0;
+    border-bottom: none;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: var(--secondary);
+}
+
+.menu-item-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.menu-item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    white-space: nowrap;
 }
 
 .menu-item-category {
     display: inline-block;
     background-color: var(--primary);
     color: var(--white);
-    padding: 5px 15px;
-    border-radius: 30px;
-    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
-.menu-item-name {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
 .menu-item-price {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: var(--primary);
 }
 
-.menu-item-body {
-    padding: 1.5rem;
+/* Responsive adjustments for list layout */
+@media (max-width: 768px) {
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem;
+    }
+    
+    .menu-item:hover {
+        padding-left: 1.2rem;
+    }
+    
+    .menu-item-left {
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+    }
+    
+    .menu-item-right {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
-.menu-item-description {
-    color: var(--text-light);
-    font-size: 0.9rem;
+@media (max-width: 576px) {
+    .menu-item {
+        padding: 1rem;
+    }
+    
+    .menu-item-name {
+        font-size: 1.1rem;
+    }
+    
+    .menu-item-price {
+        font-size: 1.1rem;
+    }
 }
 
 /* Franchise Section */
@@ -820,7 +963,10 @@ footer {
         padding: 10px 25px;
         font-size: 0.9rem;
     }
-    
+    .ctb-button {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
     .section-header h2 {
         font-size: 1.8rem;
     }
