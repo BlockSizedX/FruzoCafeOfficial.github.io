@@ -232,33 +232,56 @@ img {
 
 /* Hero Section */
 .hero {
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    padding: 100px 30px 50px;
-    background: linear-gradient(135deg, rgba(230, 126, 34, 0.1) 0%, rgba(22, 160, 133, 0.1) 100%);
+    position: relative;
+    min-height: calc(100vh - 90px);
+    padding: 100px 0 50px;
+    background: linear-gradient(145deg, #fffaf6 0%, #f8fbff 100%);
+    overflow: hidden;
 }
 
-.hero-content {
-    flex: 1;
-    padding-right: 2rem;
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(236, 37, 60, 0.15), transparent 20%),
+                radial-gradient(circle at bottom left, rgba(22, 160, 133, 0.12), transparent 18%);
+    pointer-events: none;
 }
-@media (max-width: 768px) {
-    .hero-content {
-        margin-top: 30px;
-    }
-    .hero-image {
-        display: none;
-    }
+
+.hero-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
 }
-@media (min-width: 769px) {
-    #a {
-        display: none;
-    }
+
+.hero-copy {
+    max-width: 560px;
 }
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
 .hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    margin-bottom: 1.3rem;
+    line-height: 1.02;
+    color: var(--secondary);
 }
 
 .hero-title span {
@@ -266,23 +289,94 @@ img {
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     color: var(--text-light);
     margin-bottom: 2rem;
+    max-width: 38rem;
+}
+
+.hero-actions,
+.hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hero-actions {
+    margin-bottom: 1.25rem;
+}
+
+.hero-link {
+    font-weight: 600;
+    color: var(--secondary);
+    transition: var(--transition);
+    border-bottom: 1px dashed rgba(52, 73, 94, 0.35);
+}
+
+.hero-link:hover {
+    color: var(--primary);
 }
 
 .hero-image {
+    min-height: 460px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.08);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.45));
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
-    flex: 1;
-    height: 500px;
-    overflow: hidden;
 }
-.hero-image img {
-    
-    height: 500px;
+
+@media (max-width: 980px) {
+    .hero-card {
+        grid-template-columns: 1fr;
+        padding: 2.5rem;
+    }
+
+    .hero-image {
+        min-height: 340px;
+    }
 }
-    
+
+@media (max-width: 700px) {
+    .hero {
+        padding: 70px 0 40px;
+    }
+
+    .hero-card {
+        padding: 1.8rem;
+        gap: 1.5rem;
+        border-radius: 24px;
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-actions,
+    .hero-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-button,
+    .ctb-button {
+        width: 100%;
+        text-align: center;
+        padding: 14px 18px;
+    }
+}
+
 /* About Section */
 .about {
     padding: 100px 0;
@@ -496,6 +590,34 @@ img {
     justify-content: space-between;
     align-items: flex-start;
     transition: var(--transition);
+}
+
+.menu-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.toggle-menu-button {
+    border: 1px solid var(--primary);
+    background-color: transparent;
+    color: var(--primary);
+    padding: 0.95rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.toggle-menu-button:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.toggle-menu-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(236, 37, 60, 0.14);
 }
 
 .menu-item:last-child {

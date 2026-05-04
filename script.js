@@ -231,6 +231,8 @@ const taliparambaMenuItems = [
 // Current menu based on selected branch
 let menuItems = sharjahMenuItems;
 let currentBranch = 'sharjah';
+const MENU_PREVIEW_LIMIT = 6;
+let showAllItems = false;
 
 // DOM Elements
 const menuItemsContainer = document.getElementById('menu-items');
@@ -240,6 +242,7 @@ const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const contactForm = document.getElementById('contactForm');
 const branchButtons = document.querySelectorAll('.branch-btn');
+const menuToggleBtn = document.getElementById('toggle-menu-btn');
 
 // Get unique categories for each branch
 function getBranchCategories(branch) {
@@ -265,6 +268,7 @@ function createFilterButtons(branch) {
     const newFilterButtons = document.querySelectorAll('.filter-btn');
     newFilterButtons.forEach(button => {
         button.addEventListener('click', () => {
+            showAllItems = false;
             newFilterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             
@@ -314,10 +318,13 @@ function displayMenuItems(items) {
     
     if (items.length === 0) {
         menuItemsContainer.innerHTML = '<p class="no-items">No items found in this category.</p>';
+        menuToggleBtn.style.display = 'none';
         return;
     }
-    
-    items.forEach(item => {
+
+    const itemsToDisplay = showAllItems ? items : items.slice(0, MENU_PREVIEW_LIMIT);
+
+    itemsToDisplay.forEach(item => {
         const menuItem = document.createElement('div');
         menuItem.className = `menu-item ${item.category}`;
         
@@ -338,6 +345,13 @@ function displayMenuItems(items) {
         `;
         menuItemsContainer.appendChild(menuItem);
     });
+
+    if (items.length > MENU_PREVIEW_LIMIT) {
+        menuToggleBtn.style.display = 'inline-flex';
+        menuToggleBtn.textContent = showAllItems ? 'Show less' : 'View all items';
+    } else {
+        menuToggleBtn.style.display = 'none';
+    }
 }
 
 // Filter Menu Items
@@ -375,6 +389,7 @@ function initMenu() {
 // Event Listeners for Branch Selection
 branchButtons.forEach(button => {
     button.addEventListener('click', () => {
+        showAllItems = false;
         // Remove active class from all branch buttons
         branchButtons.forEach(btn => btn.classList.remove('active'));
         // Add active class to clicked button
@@ -402,6 +417,16 @@ branchButtons.forEach(button => {
 
 // Event Listener for Sort Select
 sortSelect.addEventListener('change', () => {
+    showAllItems = false;
+    const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+    let filteredItems = filterMenu(activeFilter);
+    const sortBy = sortSelect.value;
+    let sortedItems = sortMenu(filteredItems, sortBy);
+    displayMenuItems(sortedItems);
+});
+
+menuToggleBtn.addEventListener('click', () => {
+    showAllItems = !showAllItems;
     const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
     let filteredItems = filterMenu(activeFilter);
     const sortBy = sortSelect.value;
