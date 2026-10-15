@@ -240,7 +240,6 @@ const filterButtonsContainer = document.querySelector('.filter-buttons');
 const sortSelect = document.getElementById('sort');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
-const contactForm = document.getElementById('contactForm');
 const branchButtons = document.querySelectorAll('.branch-btn');
 const menuToggleBtn = document.getElementById('toggle-menu-btn');
 
@@ -386,34 +385,35 @@ function initMenu() {
     displayMenuItems(sortedItems);
 }
 
+// Switch the menu to a branch (shared by the menu buttons and the Book Now form)
+function setBranch(branch) {
+    if (branch !== 'sharjah' && branch !== 'taliparamba') return;
+    showAllItems = false;
+    branchButtons.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-branch') === branch));
+    currentBranch = branch;
+    menuItems = branch === 'sharjah' ? sharjahMenuItems : taliparambaMenuItems;
+
+    // Create new filter buttons for this branch
+    createFilterButtons(branch);
+
+    // Reset to 'all' filter and refresh display
+    displayMenuItems(sortMenu(filterMenu('all'), 'name'));
+    document.dispatchEvent(new CustomEvent('menu:branchchange', { detail: { branch } }));
+}
+
 // Event Listeners for Branch Selection
 branchButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        showAllItems = false;
-        // Remove active class from all branch buttons
-        branchButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        button.classList.add('active');
-
-        // Switch menu based on branch
-        const branch = button.getAttribute('data-branch');
-        currentBranch = branch;
-
-        if (branch === 'sharjah') {
-            menuItems = sharjahMenuItems;
-        } else if (branch === 'taliparamba') {
-            menuItems = taliparambaMenuItems;
-        }
-
-        // Create new filter buttons for this branch
-        createFilterButtons(branch);
-
-        // Reset to 'all' filter and refresh display
-        let filteredItems = filterMenu('all');
-        let sortedItems = sortMenu(filteredItems, 'name');
-        displayMenuItems(sortedItems);
-    });
+    button.addEventListener('click', () => setBranch(button.getAttribute('data-branch')));
 });
+
+// Read-only access to the live menu data for other scripts (Book Now form)
+window.FruzoMenu = {
+    getBranch: () => currentBranch,
+    getItems: (branch) => (branch === 'sharjah' ? sharjahMenuItems : taliparambaMenuItems),
+    getCategoryName: getCategoryName,
+    getCurrency: (branch) => (branch === 'sharjah' ? 'AED' : '\u20B9'),
+    setBranch: setBranch
+};
 
 // Event Listener for Sort Select
 sortSelect.addEventListener('change', () => {
@@ -437,7 +437,8 @@ menuToggleBtn.addEventListener('click', () => {
 // Mobile Menu Toggle
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    const open = navMenu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', String(open));
 });
 
 // Close mobile menu when clicking on a link
@@ -445,40 +446,24 @@ document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
     });
-});
-
-// Contact Form Submission
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    const mailto = `mailto:blocksizedx@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\n\n${message}`
-    )}`;
-
-    window.location.href = mailto;
-    contactForm.reset();
 });
 
 // Initialize the website
 document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     
-    // Add scroll effect to navbar
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.style.padding = '0.5rem 0';
-            navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-        } else {
-            navbar.style.padding = '1rem 0';
-            navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-        }
-    });
+    // Compact navbar on scroll + expose its height so anchors/mobile menu clear it
+    const navbar = document.querySelector('.navbar');
+    const syncNavHeight = () => document.documentElement.style.setProperty('--nav-h', navbar.offsetHeight + 'px');
+    const onNavScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', onNavScroll, { passive: true });
+    onNavScroll();
+    syncNavHeight();
+    if (window.ResizeObserver) {
+        new ResizeObserver(syncNavHeight).observe(navbar);
+    } else {
+        window.addEventListener('resize', syncNavHeight);
+    }
 });
