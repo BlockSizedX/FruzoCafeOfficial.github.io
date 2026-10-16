@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fruzo Cafe - fresh juices, milkshakes, falooda, burgers and more. Order your favourites via WhatsApp.">
-    <title>Fruzo Cafe - Fresh Juices & Delicious Treats</title>
-    <link rel="preload" as="image" href="images/frames/frame_001.jpg" fetchpriority="high">
+    <title>Fruzo Cafe - Shawarma, Falooda, Shakes & Fresh Juices</title>
+    <meta name="description" content="Fruzo Cafe, Kerala - charcoal shawarma, burgers, falooda, shakes, fresh juices and ice cream. Order ahead and confirm on WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Fruzo Cafe - Shawarma, Falooda, Shakes & Fresh Juices">
+    <meta property="og:description" content="Charcoal shawarma, burgers, falooda, shakes and fresh juices. Order ahead and confirm on WhatsApp.">
+    <meta property="og:image" content="images/hero-image.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="images/hero-image.jpg" fetchpriority="high">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <noscript>
-        <style>
-            .burger-hero { height: auto; }
-            .burger-hero__stage { position: relative; min-height: 100vh; }
-            .burger-hero__cta { visibility: visible; opacity: 1; transform: none; }
-            .scroll-cue { display: none; }
-        </style>
-    </noscript>
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
         <nav class="navbar" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <a href="#home"><img src="images/logo.jpg" alt="Fruzo Cafe Logo"></a>
+                    <a href="#home" aria-label="Fruzo Cafe home"><img src="images/logo.jpg" alt="Fruzo Cafe Logo"></a>
                     <span class="nav-brand">Fruzo Cafe</span>
                 </div>
                 <div class="nav-menu" id="nav-menu">
@@ -44,175 +42,134 @@
     </header>
 
     <main>
-    <!-- Hero Section: scroll-driven burger animation -->
-    <section class="burger-hero" id="home" aria-labelledby="hero-title">
-        <div class="burger-hero__stage">
-            <div class="burger-hero__bg" aria-hidden="true"></div>
-            <canvas id="burger-canvas" class="burger-hero__canvas" role="img" aria-label="A burger opening up layer by layer as you scroll"></canvas>
-            <div class="burger-hero__copy">
+    <!-- 1. Home / Hero -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+        <img class="hero__bg" src="images/hero-image.jpg" alt="" fetchpriority="high" decoding="async">
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="container hero__inner">
+            <div class="hero__copy">
                 <span class="eyebrow">Fresh. Vibrant. Fruzo.</span>
-                <h1 class="hero-title" id="hero-title">Stacked fresh. <span>Served Fruzo.</span></h1>
-                <p class="hero-subtitle">Juicy burgers, fresh juices, shakes and falooda, crafted daily with real ingredients. Scroll to watch the burger open up.</p>
-                <div class="burger-hero__cta" id="hero-cta">
-                    <a href="#menu" class="cta-button">Explore Our Menu</a>
+                <h1 class="hero-title" id="hero-title">Charcoal shawarma, falooda &amp; <span>fresh shakes.</span></h1>
+                <p class="hero-subtitle">Shawarma, juicy burgers, fresh juices, shakes and falooda, made with real ingredients at our Kerala cafe. Order ahead and confirm on WhatsApp.</p>
+                <div class="hero__actions">
+                    <a href="#menu" class="cta-button">View Our Menu</a>
+                    <a href="#book" class="ctb-button ctb-button--light">Book Now</a>
                 </div>
-            </div>
-            <div class="scroll-cue" aria-hidden="true">
-                <span class="scroll-cue__text">Scroll to explore</span>
-                <span class="scroll-cue__mouse"><span class="scroll-cue__dot"></span></span>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section -->
-    <section class="menu" id="menu">
+    <!-- 2. Menu -->
+    <section class="menu" id="menu" aria-labelledby="menu-title">
         <div class="container">
             <div class="section-header">
-                <h2>Our Menu</h2>
-                <p>Explore our wide selection of refreshing beverages</p>
-            </div>
-            
-            <!-- Branch Selection -->
-            <div class="branch-selector">
-                <button class="branch-btn active" data-branch="sharjah">
-                    <span class="branch-name">Dubai</span>
-                </button>
-                <button class="branch-btn" data-branch="taliparamba">
-                    <span class="branch-name">cherukunnu thara (Kerala)</span>
-                </button>
-                <div class="branch-fill"></div>
+                <h2 id="menu-title">Our Menu</h2>
+                <p>Explore shawarma, burgers, falooda, shakes, juices and more</p>
             </div>
 
-            <!-- Menu Filter/Sort -->
             <div class="menu-controls">
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All Items</button>
-                    <button class="filter-btn" data-filter="juice">Fresh Juice</button>
-                    <button class="filter-btn" data-filter="mojito">Mojito</button>
-                    <button class="filter-btn" data-filter="milkshake">Milkshake</button>
-                    <button class="filter-btn" data-filter="falooda">Falooda</button>
-                    <button class="filter-btn" data-filter="special">Fruzo Special</button>
+                <div class="menu-controls__row">
+                    <div class="control control--search">
+                        <label for="menu-search">Search</label>
+                        <input type="search" id="menu-search" placeholder="Search the menu" autocomplete="off">
+                    </div>
+                    <div class="control control--category">
+                        <label for="category-select">Category</label>
+                        <select id="category-select"></select>
+                    </div>
+                    <div class="control control--sort">
+                        <label for="sort">Sort by</label>
+                        <select id="sort">
+                            <option value="default">Menu order</option>
+                            <option value="name">Name (A-Z)</option>
+                            <option value="price-low">Price (Low to High)</option>
+                            <option value="price-high">Price (High to Low)</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="sort-options">
-                    <label for="sort">Sort by:</label>
-                    <select id="sort">
-                        <option value="name">Name (A-Z)</option>
-                        <option value="price-low">Price (Low to High)</option>
-                        <option value="price-high">Price (High to Low)</option>
-                    </select>
-                </div>
+                <div class="filter-buttons" id="filter-buttons" role="group" aria-label="Filter by category"></div>
             </div>
-            
-            <!-- Menu Items -->
-            <div class="menu-items" id="menu-items">
-                <!-- Items will be populated by JavaScript -->
-            </div>
+
+            <div class="menu-items" id="menu-items"></div>
             <div class="menu-footer">
                 <button id="toggle-menu-btn" class="toggle-menu-button" type="button">View all items</button>
             </div>
         </div>
     </section>
 
-    <!-- Book Now Section -->
+    <!-- 3. Book Now -->
     <section class="book" id="book" aria-labelledby="book-title">
         <div class="container">
             <div class="section-header">
                 <h2 id="book-title">Book Now</h2>
-                <p>Send us your order request on WhatsApp</p>
+                <p>Build your order, pick a time and continue on WhatsApp</p>
             </div>
             <div class="book-layout">
                 <form id="bookForm" class="book-form" novalidate>
-                    <fieldset class="book-branch" id="book-branch">
-                        <legend>Branch</legend>
-                        <div class="book-branch__options" id="book-branch-options">
-                            <!-- Options are generated from the menu's branch buttons by book.js -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-name">Full Name <span class="req" aria-hidden="true">*</span></label>
+                            <input type="text" id="book-name" name="name" autocomplete="name" placeholder="e.g. Anjali Menon" required aria-describedby="book-name-error">
+                            <p class="field-error" id="book-name-error" role="alert"></p>
                         </div>
-                    </fieldset>
-
-                    <div class="form-group">
-                        <label for="book-name">Full Name <span class="req" aria-hidden="true">*</span></label>
-                        <input type="text" id="book-name" name="name" autocomplete="name" placeholder="e.g. Anjali Menon" required aria-describedby="book-name-error">
-                        <p class="field-error" id="book-name-error" role="alert"></p>
+                        <div class="form-group">
+                            <label for="book-phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+                            <input type="tel" id="book-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="e.g. 98765 43210" required aria-describedby="book-phone-error">
+                            <p class="field-error" id="book-phone-error" role="alert"></p>
+                        </div>
                     </div>
 
+                    <div class="form-row">
                     <div class="form-group">
-                        <label for="book-phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
-                        <input type="tel" id="book-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="e.g. +91 98765 43210" required aria-describedby="book-phone-hint book-phone-error">
-                        <p class="field-hint" id="book-phone-hint">Include the country code for numbers outside India.</p>
-                        <p class="field-error" id="book-phone-error" role="alert"></p>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="book-item-select">Items Needed <span class="req" aria-hidden="true">*</span></label>
-                        <select id="book-item-select" aria-describedby="book-items-hint book-items-error">
-                            <option value="">Choose an item to add...</option>
-                        </select>
-                        <p class="field-hint" id="book-items-hint">Pick as many items as you like. Choosing an item again adds one more.</p>
-                        <ul class="book-selected" id="book-selected" aria-live="polite" aria-label="Selected items"></ul>
-                        <p class="field-error" id="book-items-error" role="alert"></p>
+                        <label for="book-date">Date <span class="req" aria-hidden="true">*</span></label>
+                        <select id="book-date" name="date" required aria-describedby="book-date-hint book-date-error"></select>
+                        <p class="field-hint" id="book-date-hint">Today and the next 7 days (India time).</p>
+                        <p class="field-error" id="book-date-error" role="alert"></p>
                     </div>
 
                     <fieldset class="form-group book-time">
                         <legend>Preferred Time <span class="req" aria-hidden="true">*</span></legend>
                         <div class="book-time__row">
-                            <select id="book-day" aria-label="Day" aria-describedby="book-time-hint book-time-error"><option value="">Day</option></select>
-                            <select id="book-month" aria-label="Month"><option value="">Month</option></select>
-                            <select id="book-year" aria-label="Year"><option value="">Year</option></select>
-                            <input type="time" id="book-time" name="time" aria-label="Time" required>
+                            <select id="book-hour" aria-label="Hour" aria-describedby="book-time-hint book-time-error"></select>
+                            <select id="book-minute" aria-label="Minute"></select>
+                            <select id="book-ampm" aria-label="AM or PM">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
                         </div>
-                        <p class="field-hint" id="book-time-hint">Date order: day, month, year.</p>
+                        <p class="field-hint" id="book-time-hint">Open daily 10:00 AM - 11:00 PM.</p>
                         <p class="field-error" id="book-time-error" role="alert"></p>
                     </fieldset>
+                    </div>
 
-                    <button type="submit" class="cta-button book-submit"><i class="fab fa-whatsapp" aria-hidden="true"></i> Send Order Request on WhatsApp</button>
-                    <p class="book-disclaimer"><strong>Call now for confirming the order</strong></p>
-                    <p class="book-note">This opens WhatsApp with your request already written. Your order is not confirmed until you send the message and we reply to confirm availability.</p>
+                    <div class="form-group">
+                        <label for="book-item-select">Add Items <span class="req" aria-hidden="true">*</span></label>
+                        <select id="book-item-select" aria-describedby="book-items-error">
+                            <option value="">Choose an item to add...</option>
+                        </select>
+                        <p class="field-error" id="book-items-error" role="alert"></p>
+                    </div>
+
+                    <section class="book-receipt" aria-label="Your order">
+                        <h3>Your Order</h3>
+                        <p class="receipt-empty" id="receipt-empty">No items yet. Add items from the dropdown above or the menu.</p>
+                        <ul class="receipt-lines" id="receipt-lines" aria-live="polite"></ul>
+                        <dl class="receipt-totals" id="receipt-totals" hidden>
+                            <div><dt>Food subtotal</dt><dd id="receipt-subtotal">&#8377;0</dd></div>
+                            <div class="is-total"><dt>Estimated total</dt><dd id="receipt-total">&#8377;0</dd></div>
+                        </dl>
+                        <p class="receipt-note">Estimate only. Parcel charge applies for some items. Delivery within 5 km; a delivery charge applies for orders below &#8377;400. On-site pickup also available.</p>
+                    </section>
+
+                    <button type="submit" class="cta-button book-submit"><i class="fab fa-whatsapp" aria-hidden="true"></i> Review &amp; Continue</button>
                     <div class="book-status" id="book-status" role="status" aria-live="polite"></div>
                 </form>
 
-                <aside class="book-info" aria-label="Contact and opening hours">
-                    <h3>Visit or Call Us</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p class="contact-label">Kerala branch</p>
-                            <p>cherukunnu thara, Kannapuram Road, Kerala 670301</p>
-                            <p class="contact-label contact-gap">UAE branch</p>
-                            <p>10 Al Ghumamah St - Mohamed Bin Zayed City - ME11 - Abu Dhabi - United Arab Emirates</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone" aria-hidden="true"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p><a href="tel:+919526668656">+91 9526668656</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p><a href="mailto:fruzocafe7@gmail.com">fruzocafe7@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock" aria-hidden="true"></i>
-                        <div>
-                            <h4>Opening Hours</h4>
-                            <p class="contact-label">UAE branch</p>
-                            <p>Monday - Sunday: 6 AM - 12 AM</p>
-                            <p>Friday : 6 AM - 12:30 PM,  2 PM - 12 PM  </p>
-                            <p class="contact-label contact-gap">Kerala branch</p>
-                            <p>Monday - Sunday: 10 AM - 11 PM</p>
-                        </div>
-                    </div>
-                </aside>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- 4. About -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-header">
@@ -226,27 +183,27 @@
                     <p>We carefully select our fruits and ingredients to ensure every drink is packed with natural goodness and flavor. From our signature fresh juices to our indulgent milkshakes and faloodas, we craft each beverage with care and precision.</p>
                     <div class="features">
                         <div class="feature">
-                            <i class="fas fa-leaf"></i>
+                            <i class="fas fa-leaf" aria-hidden="true"></i>
                             <h4>Fresh Ingredients</h4>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-heart" aria-hidden="true"></i>
                             <h4>Made with Love</h4>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-award"></i>
+                            <i class="fas fa-award" aria-hidden="true"></i>
                             <h4>Premium Quality</h4>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="images/store3.jpg" alt="fruzo cafe | BlockSizedX">
+                    <img src="images/store3.jpg" alt="Inside Fruzo Cafe" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Franchise Section -->
+    <!-- 5. Franchise -->
     <section class="franchise" id="franchise">
         <div class="container">
             <div class="section-header">
@@ -257,25 +214,25 @@
                 <div class="franchise-info">
                     <h3>Why Choose Fruzo Cafe?</h3>
                     <p>With our proven business model, comprehensive training, and ongoing support, opening a Fruzo Cafe franchise is an excellent investment opportunity.</p>
-                    
+
                     <div class="benefits">
                         <div class="benefit">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
                             <h4>Proven Business Model</h4>
                             <p>Benefit from our established brand and successful operational strategies.</p>
                         </div>
                         <div class="benefit">
-                            <i class="fas fa-graduation-cap"></i>
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                             <h4>Comprehensive Training</h4>
                             <p>We provide extensive training for you and your staff to ensure success.</p>
                         </div>
                         <div class="benefit">
-                            <i class="fas fa-hands-helping"></i>
+                            <i class="fas fa-hands-helping" aria-hidden="true"></i>
                             <h4>Ongoing Support</h4>
                             <p>Receive continuous support in marketing, operations, and product development.</p>
                         </div>
                     </div>
-                    
+
                     <div class="franchise-contact">
                         <h4>Interested in a Franchise?</h4>
                         <p>Contact us for more information about franchise opportunities in your area.</p>
@@ -283,22 +240,47 @@
                     </div>
                 </div>
                 <div class="franchise-image">
-                    <img src="images/store1.jpg" alt="BlockSizedX , fruzo cafe">
+                    <img src="images/store1.jpg" alt="Fruzo Cafe storefront" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
     </section>
     </main>
 
+    <!-- Cart shortcut + toast -->
+    <button type="button" class="cart-fab" id="cart-fab" aria-label="View your order" aria-expanded="false" aria-controls="cart-panel" hidden><i class="fas fa-shopping-cart" aria-hidden="true"></i><span class="cart-fab__count" id="cart-count">0</span></button>
+    <div class="cart-panel" id="cart-panel" role="region" aria-label="Your order" hidden>
+        <h4>Your Order</h4>
+        <ul class="cart-panel__lines" id="cart-lines"></ul>
+        <div class="cart-panel__total"><span>Estimated total</span><strong id="cart-total">&#8377;0</strong></div>
+        <a href="#book" class="cta-button" id="cart-book">Book Now</a>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Order confirmation modal -->
+    <div class="modal" id="confirm-modal" hidden>
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-notice" tabindex="-1">
+            <h3 id="modal-title">Confirm your order</h3>
+            <div class="modal__meta" id="modal-meta"></div>
+            <ul class="modal__lines" id="modal-lines"></ul>
+            <div class="modal__total"><span>Estimated total</span><strong id="modal-total">&#8377;0</strong></div>
+            <p class="modal__notice" id="modal-notice">Please call us to confirm your order on WhatsApp. A parcel charge applies for some items. Delivery is available within 5 km, with a delivery charge for orders below &#8377;400 (we'll confirm the amount). On-site pickup is also available.</p>
+            <div class="modal__actions">
+                <button type="button" class="ctb-button" id="modal-edit">Go back &amp; edit</button>
+                <button type="button" class="cta-button" id="modal-continue"><i class="fab fa-whatsapp" aria-hidden="true"></i> Continue to WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/logo.jpg" alt="Fruzo Cafe Logo">
+                    <img src="images/logo.jpg" alt="Fruzo Cafe Logo" loading="lazy">
                     <p>Fresh juices, delicious milkshakes, and refreshing treats made with love and premium ingredients.</p>
-                    <br>
-                    <p>Website developed and maintained by <a style="color: antiquewhite;" href="https://blocksizedx.github.io">BlockSizedX</a></p>
+                    <p class="footer-credit">Website developed and maintained by <a href="https://blocksizedx.github.io">BlockSizedX</a></p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
@@ -310,24 +292,32 @@
                         <li><a href="#franchise">Franchise</a></li>
                     </ul>
                 </div>
+                <div class="footer-visit">
+                    <h4>Visit Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>cherukunnu thara, Kannapuram Road, Kerala 670301</span></li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+919526668656">+91 9526668656</a></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:fruzocafe7@gmail.com">fruzocafe7@gmail.com</a></li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i><span>Monday - Sunday: 10 AM - 11 PM</span></li>
+                    </ul>
+                </div>
                 <div class="footer-social">
                     <h4>Follow Us</h4>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/fruzo_cafe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="tel:9526668656" aria-label="Call us"><i class="fas fa-phone"></i></a>
-                        <a href="https://wa.me/919526668656" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/fruzo_cafe?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="tel:9526668656" aria-label="Call us"><i class="fas fa-phone" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/919526668656" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Fruzo Cafe. All rights reserved.</p>
-                <p>&copy; 2026 BlockSizedX | Website developed and maintained by <a style="color: antiquewhite;" href="https://blocksizedx.github.io">BlockSizedX</a></p>
+                <p>&copy; 2026 BlockSizedX | Website developed and maintained by <a href="https://blocksizedx.github.io">BlockSizedX</a></p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script src="hero.js"></script>
     <script src="book.js"></script>
 </body>
 </html>
