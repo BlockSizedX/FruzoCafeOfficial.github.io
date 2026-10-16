@@ -1,100 +1,14 @@
-// script.js
-// Menu Data - SHARJAH (DUBAI) BRANCH
-// script.js
-// Menu Data - SHARJAH (DUBAI) BRANCH
-const sharjahMenuItems = [
-    // Fresh Juice
-    { id: 1, name: "Apple", price: 9.00, category: "juice", description: "Freshly squeezed apple juice" },
-    { id: 2, name: "Orange", price: 10.00, category: "juice", description: "Freshly squeezed orange juice" },
-    { id: 3, name: "Tender Coconut", price: 9.00, category: "juice", description: "Refreshing tender coconut water" },
-    { id: 4, name: "Water Melon", price: 9.00, category: "juice", description: "Sweet and hydrating watermelon juice" },
-    { id: 5, name: "Pineapple", price: 9.00, category: "juice", description: "Tropical pineapple juice" },
-    { id: 6, name: "Grape", price: 9.00, category: "juice", description: "Sweet grape juice" },
-    { id: 7, name: "Anar", price: 9.00, category: "juice", description: "Fresh pomegranate juice" },
-    { id: 8, name: "Papaya", price: 9.00, category: "juice", description: "Nutritious papaya juice" },
-    { id: 9, name: "Sweet Melon", price: 9.00, category: "juice", description: "Refreshing sweet melon juice" },
-    { id: 10, name: "Lime", price: 5.00, category: "juice", description: "Zesty lime juice" },
-    { id: 11, name: "Mint Lime", price: 6.00, category: "juice", description: "Refreshing mint and lime combination" },
-    { id: 12, name: "Majic Lime", price: 6.00, category: "juice", description: "Our special magic lime recipe" },
-    { id: 13, name: "Ginger Lime", price: 6.00, category: "juice", description: "Spicy ginger with zesty lime" },
-    { id: 14, name: "Grape Lime", price: 6.00, category: "juice", description: "Sweet grape with tangy lime" },
-
-    // Mojito
-    { id: 15, name: "Blue Curacao", price: 11.00, category: "mojito", description: "Refreshing blue curacao mojito" },
-    { id: 16, name: "Green Apple", price: 11.00, category: "mojito", description: "Crisp green apple mojito" },
-    { id: 17, name: "Water Melon", price: 11.00, category: "mojito", description: "Sweet watermelon mojito" },
-    { id: 18, name: "Passion Fruit", price: 11.00, category: "mojito", description: "Tropical passion fruit mojito" },
-    { id: 19, name: "Strawberry", price: 11.00, category: "mojito", description: "Sweet strawberry mojito" },
-
-    // Milkshake
-    { id: 20, name: "Apple Shake", price: 10.00, category: "milkshake", description: "Creamy apple milkshake" },
-    { id: 21, name: "Anar Shake", price: 10.00, category: "milkshake", description: "Creamy pomegranate milkshake" },
-    { id: 22, name: "Papaya Shake", price: 10.00, category: "milkshake", description: "Creamy papaya milkshake" },
-    { id: 23, name: "Chickoo Shake", price: 10.00, category: "milkshake", description: "Creamy chickoo milkshake" },
-    { id: 24, name: "Avocado Shake", price: 10.00, category: "milkshake", description: "Creamy avocado milkshake" },
-    { id: 25, name: "Sharjah Shake", price: 10.00, category: "milkshake", description: "Special Sharjah recipe milkshake" },
-    { id: 26, name: "Mango Shake", price: 10.00, category: "milkshake", description: "Creamy mango milkshake" },
-    { id: 27, name: "Abood", price: 10.00, category: "milkshake", description: "Special Abood recipe milkshake" },
-    { id: 28, name: "Date Shake", price: 10.00, category: "milkshake", description: "Nutritious date milkshake" },
-    { id: 29, name: "Strawberry Shake", price: 10.00, category: "milkshake", description: "Creamy strawberry milkshake" },
-    { id: 30, name: "Oreo Milkshake", price: 10.00, category: "milkshake", description: "Classic Oreo cookie milkshake" },
-    { id: 31, name: "KitKat Milkshake", price: 10.00, category: "milkshake", description: "Chocolatey KitKat milkshake" },
-    { id: 32, name: "Snickers Milkshake", price: 10.00, category: "milkshake", description: "Nutty Snickers milkshake" },
-    { id: 33, name: "Tender Coconut Shake", price: 11.00, category: "milkshake", description: "Refreshing tender coconut milkshake" },
-    { id: 34, name: "Cocktail", price: 11.00, category: "milkshake", description: "Fruit cocktail milkshake" },
-    { id: 35, name: "Fig Shake", price: 11.00, category: "milkshake", description: "Nutritious fig milkshake" },
-    { id: 36, name: "Elaneer Kandi Shake", price: 12.00, category: "milkshake", description: "Special tender coconut milkshake" },
-    { id: 37, name: "Cashew Shake", price: 12.00, category: "milkshake", description: "Rich cashew milkshake" },
-    { id: 38, name: "Badam Shake", price: 12.00, category: "milkshake", description: "Nutritious almond milkshake" },
-    { id: 39, name: "Jack Fruit Shake", price: 12.00, category: "milkshake", description: "Tropical jackfruit milkshake" },
-    { id: 40, name: "Mocktail", price: 12.00, category: "milkshake", description: "Refreshing mocktail milkshake" },
-    { id: 41, name: "Cold Coffee", price: 12.00, category: "milkshake", description: "Chilled coffee milkshake" },
-
-    // Falooda
-    { id: 42, name: "Regular Falooda", price: 11.00, category: "falooda", description: "Classic falooda with vermicelli and ice cream" },
-    { id: 43, name: "Falooda Capital", price: 12.00, category: "falooda", description: "Premium falooda with special ingredients" },
-    { id: 44, name: "Falooda Bay", price: 14.00, category: "falooda", description: "Deluxe falooda with exotic flavors" },
-    { id: 45, name: "Shalimar Falooda", price: 14.00, category: "falooda", description: "Special Shalimar recipe falooda" },
-    { id: 46, name: "Costal Breeze", price: 14.00, category: "falooda", description: "Refreshing coastal-inspired falooda" },
-    { id: 47, name: "Monarch Special", price: 13.00, category: "falooda", description: "Our signature Monarch falooda" },
-    { id: 48, name: "Choco Chickoo Falooda", price: 13.00, category: "falooda", description: "Chocolate and chickoo falooda" },
-    { id: 49, name: "Fancy Falooda", price: 13.00, category: "falooda", description: "Beautifully presented fancy falooda" },
-    { id: 50, name: "Gud Bud", price: 13.00, category: "falooda", description: "Traditional Gud Bud falooda" },
-    { id: 51, name: "Malabar Falooda", price: 13.00, category: "falooda", description: "Malabar-style special falooda" },
-    { id: 52, name: "Royal Kingdom Falooda", price: 15.00, category: "falooda", description: "Fit for royalty - our premium falooda" },
-    { id: 53, name: "Fruzo Special Falooda", price: 16.00, category: "falooda", description: "Our signature Fruzo special falooda" },
-
-    // Fruzo Special
-    { id: 54, name: "Kannur SP Grape Soda", price: 7.00, category: "special", description: "Special grape soda from Kannur" },
-    { id: 55, name: "Second Home", price: 13.00, category: "special", description: "Comforting Second Home special" },
-    { id: 56, name: "Smoking Brownie", price: 13.00, category: "special", description: "Dramatic smoking brownie dessert" },
-    { id: 57, name: "Puttu Ice Cream", price: 13.00, category: "special", description: "Traditional puttu with ice cream" },
-    { id: 58, name: "Hot Chocolate Fudge", price: 13.00, category: "special", description: "Decadent hot chocolate fudge" },
-    { id: 59, name: "Black Spider", price: 13.00, category: "special", description: "Mysterious Black Spider special" },
-    { id: 60, name: "Brown Spider", price: 13.00, category: "special", description: "Chocolatey Brown Spider special" },
-    { id: 61, name: "Dry Fruit Dacoria", price: 14.00, category: "special", description: "Rich dry fruit dessert" },
-    { id: 62, name: "Choco Lava", price: 13.00, category: "special", description: "Molten chocolate lava cake" },
-    { id: 63, name: "Blue Lady", price: 11.00, category: "special", description: "Elegant Blue Lady special" },
-    { id: 64, name: "Big B", price: 13.00, category: "special", description: "Our signature Big B special" },
-    { id: 65, name: "Mixed Fruit Punch", price: 13.00, category: "special", description: "Refreshing mixed fruit punch" },
-    { id: 66, name: "Death by Chocolate", price: 13.00, category: "special", description: "Ultimate chocolate indulgence" },
-    { id: 67, name: "Second Wife (Seasonal)", price: 13.00, category: "special", description: "Seasonal Second Wife special" },
-    { id: 68, name: "Avil Milk", price: 13.00, category: "special", description: "Traditional avil milk dessert" },
-    { id: 69, name: "Nannari Sarbath", price: 7.00, category: "special", description: "Refreshing nannari sarbath" },
-    { id: 70, name: "Raw Mango Bird's Eye", price: 7.00, category: "special", description: "Tangy raw mango special" },
-    { id: 71, name: "Water Melon Blast", price: 13.00, category: "special", description: "Explosive watermelon flavor" }
-];
-
-// Menu Data - TALIPARAMBA (KERALA) BRANCH
-const taliparambaMenuItems = [
-    // 🍨 ICE CREAM (CUPS)
+// script.js - Fruzo Cafe menu (Kerala branch). Single source of truth for every price on the site.
+// Price updates applied once, here: shawarma items +10, Chicken Loaded Fries 220, Royal Falooda 150.
+const menuItems = [
+    // Ice Cream Cups
     { id: 1, name: "Regular Cup (Vanilla, Strawberry)", price: 60, category: "icecream", description: "Classic ice cream cup with your choice of Vanilla or Strawberry" },
     { id: 2, name: "Premium Cup (Mango, Pineapple)", price: 80, category: "icecream", description: "Premium fruit ice cream cup with Mango or Pineapple flavor" },
     { id: 3, name: "Classic Cup (Chocolate, Butterscotch)", price: 90, category: "icecream", description: "Classic flavors: Chocolate, Butterscotch, Kulfi, Spanish Delight, or Pista" },
     { id: 4, name: "Natural Cup (Chikoo, Alphonso Mango)", price: 90, category: "icecream", description: "Natural fruit ice cream with Chikoo or Alphonso Mango" },
     { id: 5, name: "Exotic Cup (Blueberry, Tender Coconut)", price: 110, category: "icecream", description: "Exotic flavors: Blueberry or Tender Coconut" },
 
-    // 🍧 GREAT SUNDAE
+    // Great Sundae
     { id: 6, name: "Menace for Kids", price: 150, category: "sundae", description: "Fun sundae specially designed for kids" },
     { id: 7, name: "Banana Split", price: 150, category: "sundae", description: "Classic banana split with ice cream and toppings" },
     { id: 8, name: "Velvett Crunch", price: 160, category: "sundae", description: "Velvety ice cream with crunchy toppings" },
@@ -106,7 +20,7 @@ const taliparambaMenuItems = [
     { id: 14, name: "Special Fruit Salad", price: 130, category: "sundae", description: "Ice cream with special fruit salad mix" },
     { id: 15, name: "Dry Fruit Salad", price: 160, category: "sundae", description: "Premium sundae with dry fruits and ice cream" },
 
-    // 🍨 FALOODA
+    // Falooda
     { id: 16, name: "Regular Falooda", price: 110, category: "falooda", description: "Classic falooda with mixed ice creams, fruits, semiya, cornflakes, and sauces" },
     { id: 17, name: "Coastal Breeze", price: 140, category: "falooda", description: "Refreshing coastal-inspired falooda with tropical flavors" },
     { id: 18, name: "Rose Falooda", price: 130, category: "falooda", description: "Aromatic rose flavored falooda with rose syrup" },
@@ -118,7 +32,7 @@ const taliparambaMenuItems = [
     { id: 24, name: "Choco Chikoo Falooda", price: 130, category: "falooda", description: "Chocolate and chickoo flavored falooda" },
     { id: 25, name: "Fruzo Special Falooda", price: 160, category: "falooda", description: "Our signature Fruzo special falooda with exclusive ingredients" },
 
-    // 🍓 FRUZO SMOOTHIES
+    // Smoothies
     { id: 26, name: "Select All Mix Smoothie", price: 140, category: "smoothies", description: "Mixed fruit smoothie with all our best flavors" },
     { id: 27, name: "Second Home Smoothie", price: 140, category: "smoothies", description: "Comforting smoothie that feels like home" },
     { id: 28, name: "Mixed Fruit Punch Smoothie", price: 140, category: "smoothies", description: "Refreshing mixed fruit punch in smoothie form" },
@@ -133,7 +47,7 @@ const taliparambaMenuItems = [
     { id: 37, name: "Death by Chocolate", price: 170, category: "smoothies", description: "Ultimate chocolate indulgence smoothie" },
     { id: 38, name: "Don't Forget", price: 200, category: "smoothies", description: "Unforgettable premium smoothie experience" },
 
-    // 🍧 FRUZO SPECIALS
+    // Fruzo Specials
     { id: 39, name: "Brownie with Ice Cream", price: 160, category: "specials", description: "Warm brownie served with vanilla ice cream" },
     { id: 40, name: "Black Spider", price: 170, category: "specials", description: "Mysterious Black Spider special dessert" },
     { id: 41, name: "Smoking Brownie", price: 240, category: "specials", description: "Dramatic smoking brownie dessert experience" },
@@ -148,7 +62,7 @@ const taliparambaMenuItems = [
     { id: 50, name: "Mint Lime", price: 40, category: "specials", description: "Refreshing mint and lime cooler" },
     { id: 51, name: "Grape Lime", price: 40, category: "specials", description: "Sweet grape with tangy lime combination" },
 
-    // 🧃 JUICES
+    // Juices
     { id: 52, name: "Mango Juice", price: 60, category: "juices", description: "Fresh mango juice" },
     { id: 53, name: "Orange Juice", price: 60, category: "juices", description: "Fresh orange juice" },
     { id: 54, name: "Pineapple Juice", price: 60, category: "juices", description: "Fresh pineapple juice" },
@@ -163,7 +77,7 @@ const taliparambaMenuItems = [
     { id: 63, name: "Strawberry Juice", price: 80, category: "juices", description: "Fresh strawberry juice" },
     { id: 64, name: "Pomegranate Juice", price: 80, category: "juices", description: "Fresh pomegranate juice" },
 
-    // 🥤 ICE CREAM SHAKES
+    // Ice Cream Shakes
     { id: 65, name: "Fairy Angel (Vanilla)", price: 100, category: "iceshakes", description: "Vanilla ice cream shake" },
     { id: 66, name: "Pink & Pink (Strawberry)", price: 100, category: "iceshakes", description: "Strawberry ice cream shake" },
     { id: 67, name: "Pistachio Shake", price: 110, category: "iceshakes", description: "Pistachio flavored ice cream shake" },
@@ -178,7 +92,7 @@ const taliparambaMenuItems = [
     { id: 76, name: "Lanmei (Blueberry)", price: 110, category: "iceshakes", description: "Blueberry flavored ice cream shake" },
     { id: 77, name: "Coco Joven (Tender Coconut)", price: 110, category: "iceshakes", description: "Tender coconut flavored ice cream shake" },
 
-    // 🥤 MILKSHAKES / SPECIAL DRINKS
+    // Milkshakes / Special Drinks
     { id: 78, name: "Sharjah Shake", price: 60, category: "milkshakes", description: "Special Sharjah recipe milkshake" },
     { id: 79, name: "Oreo Shake", price: 60, category: "milkshakes", description: "Classic Oreo cookie milkshake" },
     { id: 80, name: "Jack Fruit Shake", price: 80, category: "milkshakes", description: "Tropical jackfruit milkshake" },
@@ -193,20 +107,20 @@ const taliparambaMenuItems = [
     { id: 89, name: "Pineapple Shake", price: 90, category: "milkshakes", description: "Fresh pineapple milkshake" },
     { id: 90, name: "Watermelon Shake", price: 80, category: "milkshakes", description: "Refreshing watermelon milkshake" },
 
-    // 🍟 SNACKS
+    // Snacks
     { id: 91, name: "French Fries", price: 100, category: "snacks", description: "Crispy golden french fries" },
     { id: 92, name: "Peri Peri Fries", price: 120, category: "snacks", description: "Spicy peri peri flavored fries" },
     { id: 93, name: "Chicken Popcorn", price: 120, category: "snacks", description: "Crispy chicken popcorn bites" },
     { id: 94, name: "Chicken Nuggets", price: 120, category: "snacks", description: "Golden fried chicken nuggets" },
     { id: 95, name: "Cheese Sticks", price: 140, category: "snacks", description: "Mozzarella cheese sticks" },
     { id: 96, name: "Chicken Strips", price: 160, category: "snacks", description: "Juicy chicken strips" },
-    { id: 97, name: "Chicken Loaded Fries", price: 200, category: "snacks", description: "Fries loaded with chicken and toppings" },
+    { id: 97, name: "Chicken Loaded Fries", price: 220, category: "snacks", description: "Fries loaded with chicken and toppings" },
     { id: 98, name: "Veg Sandwich", price: 100, category: "snacks", description: "Fresh vegetable sandwich" },
     { id: 99, name: "Chicken Sandwich", price: 120, category: "snacks", description: "Grilled chicken sandwich" },
     { id: 100, name: "Truffle Sandwich", price: 140, category: "snacks", description: "Premium truffle flavored sandwich" },
     { id: 101, name: "Grill Sandwich", price: 130, category: "snacks", description: "Grilled vegetable and cheese sandwich" },
 
-    // 🍔 BURGERS
+    // Burgers
     { id: 102, name: "Veg Burger", price: 100, category: "burgers", description: "Classic vegetable burger" },
     { id: 103, name: "Classic Burger", price: 120, category: "burgers", description: "Classic beef/chicken burger" },
     { id: 104, name: "Veg Mix Burger", price: 140, category: "burgers", description: "Mixed vegetable burger with special sauce" },
@@ -215,233 +129,166 @@ const taliparambaMenuItems = [
     { id: 107, name: "Zinger Burger", price: 180, category: "burgers", description: "Spicy zinger chicken burger" },
     { id: 108, name: "Chicken Double Decker", price: 190, category: "burgers", description: "Double layered chicken burger" },
 
-    // 🍗 SHAWARMA
-    { id: 109, name: "Charcoal Shawarma Roll", price: 90, category: "shawarma", description: "Charcoal grilled shawarma roll" },
-    { id: 110, name: "Charcoal Shawarma Plate", price: 110, category: "shawarma", description: "Charcoal grilled shawarma platter" },
-    { id: 111, name: "Shawarma Meat Roll", price: 110, category: "shawarma", description: "Meat filled shawarma roll" },
-    { id: 112, name: "Shawarma Meat Plate", price: 140, category: "shawarma", description: "Meat shawarma platter" },
-    { id: 113, name: "Quarter Shawarma", price: 120, category: "shawarma", description: "Quarter portion shawarma" },
-    { id: 114, name: "Half Shawarma", price: 240, category: "shawarma", description: "Half portion shawarma" },
-    { id: 115, name: "Full Shawarma", price: 480, category: "shawarma", description: "Full portion shawarma" },
-    { id: 116, name: "Special Roll", price: 140, category: "shawarma", description: "Special shawarma roll with extra fillings" },
-    { id: 117, name: "Special Half", price: 280, category: "shawarma", description: "Special half portion shawarma" },
-    { id: 118, name: "Special Full", price: 520, category: "shawarma", description: "Special full portion shawarma" }
+    // Shawarma (each price = previous price + 10)
+    { id: 109, name: "Charcoal Shawarma Roll", price: 100, category: "shawarma", description: "Charcoal grilled shawarma roll" },
+    { id: 110, name: "Charcoal Shawarma Plate", price: 120, category: "shawarma", description: "Charcoal grilled shawarma platter" },
+    { id: 111, name: "Shawarma Meat Roll", price: 120, category: "shawarma", description: "Meat filled shawarma roll" },
+    { id: 112, name: "Shawarma Meat Plate", price: 150, category: "shawarma", description: "Meat shawarma platter" },
+    { id: 113, name: "Quarter Shawarma", price: 130, category: "shawarma", description: "Quarter portion shawarma" },
+    { id: 114, name: "Half Shawarma", price: 250, category: "shawarma", description: "Half portion shawarma" },
+    { id: 115, name: "Full Shawarma", price: 490, category: "shawarma", description: "Full portion shawarma" },
+    { id: 116, name: "Special Roll", price: 150, category: "shawarma", description: "Special shawarma roll with extra fillings" },
+    { id: 117, name: "Special Half", price: 290, category: "shawarma", description: "Special half portion shawarma" },
+    { id: 118, name: "Special Full", price: 530, category: "shawarma", description: "Special full portion shawarma" }
 ];
 
-// Current menu based on selected branch
-let menuItems = sharjahMenuItems;
-let currentBranch = 'sharjah';
-const MENU_PREVIEW_LIMIT = 6;
-let showAllItems = false;
+const CATEGORY_NAMES = {
+    icecream: 'Ice Cream Cups',
+    sundae: 'Great Sundae',
+    falooda: 'Falooda',
+    smoothies: 'Smoothies',
+    specials: 'Fruzo Specials',
+    juices: 'Juices',
+    iceshakes: 'Ice Cream Shakes',
+    milkshakes: 'Milkshakes',
+    snacks: 'Snacks',
+    burgers: 'Burgers',
+    shawarma: 'Shawarma'
+};
+const CATEGORY_ORDER = Object.keys(CATEGORY_NAMES);
 
-// DOM Elements
+const MENU_PREVIEW_LIMIT = 8;
+let showAllItems = false;
+let activeFilter = 'all';
+let searchTerm = '';
+
+const priceFormatter = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+function formatINR(amount) { return priceFormatter.format(amount); }
+
+// DOM
 const menuItemsContainer = document.getElementById('menu-items');
-const filterButtonsContainer = document.querySelector('.filter-buttons');
+const filterButtonsContainer = document.getElementById('filter-buttons');
+const categorySelect = document.getElementById('category-select');
 const sortSelect = document.getElementById('sort');
+const searchInput = document.getElementById('menu-search');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
-const branchButtons = document.querySelectorAll('.branch-btn');
 const menuToggleBtn = document.getElementById('toggle-menu-btn');
 
-// Get unique categories for each branch
-function getBranchCategories(branch) {
-    const items = branch === 'sharjah' ? sharjahMenuItems : taliparambaMenuItems;
-    const categories = [...new Set(items.map(item => item.category))];
-    return categories.sort();
+function getCategoryName(category) { return CATEGORY_NAMES[category] || category; }
+
+function getCategories() {
+    const present = new Set(menuItems.map(i => i.category));
+    return CATEGORY_ORDER.filter(c => present.has(c));
 }
 
-// Create filter buttons based on current branch
-function createFilterButtons(branch) {
-    const categories = getBranchCategories(branch);
-    
-    let buttonsHTML = '<button class="filter-btn active" data-filter="all">All Items</button>';
-    
-    categories.forEach(category => {
-        const categoryName = getCategoryName(category, branch);
-        buttonsHTML += `<button class="filter-btn" data-filter="${category}">${categoryName}</button>`;
-    });
-    
-    filterButtonsContainer.innerHTML = buttonsHTML;
-    
-    // Re-attach event listeners to new buttons
-    const newFilterButtons = document.querySelectorAll('.filter-btn');
-    newFilterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            showAllItems = false;
-            newFilterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            const category = button.getAttribute('data-filter');
-            let filteredItems = filterMenu(category);
-            const sortBy = sortSelect.value;
-            let sortedItems = sortMenu(filteredItems, sortBy);
-            displayMenuItems(sortedItems);
-        });
-    });
+function escapeHTML(s) {
+    return String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
 }
 
-// Get Category Name for Display (branch-specific)
-function getCategoryName(category, branch) {
-    const sharjahCategories = {
-        'juice': '🧃 Fresh Juice',
-        'mojito': '🍹 Mojito',
-        'milkshake': '🥤 Milkshake',
-        'falooda': '🍨 Falooda',
-        'special': '🍧 Fruzo Special'
-    };
-    
-    const taliparambaCategories = {
-        'icecream': '🍨 Ice Cream Cups',
-        'sundae': '🍧 Great Sundae',
-        'falooda': '🍨 Falooda',
-        'smoothies': '🍓 Smoothies',
-        'specials': '🍧 Fruzo Specials',
-        'juices': '🧃 Juices',
-        'iceshakes': '🥤 Ice Cream Shakes',
-        'milkshakes': '🥤 Milkshakes',
-        'snacks': '🍟 Snacks',
-        'burgers': '🍔 Burgers',
-        'shawarma': '🍗 Shawarma'
-    };
-    
-    if (branch === 'sharjah') {
-        return sharjahCategories[category] || category;
-    } else {
-        return taliparambaCategories[category] || category;
+// Category controls: pill buttons (desktop) + dropdown (mobile), always in sync
+function createFilterControls() {
+    const cats = getCategories();
+    filterButtonsContainer.innerHTML =
+        '<button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Items</button>' +
+        cats.map(c => `<button type="button" class="filter-btn" data-filter="${c}" aria-pressed="false">${getCategoryName(c)}</button>`).join('');
+    categorySelect.innerHTML =
+        '<option value="all">All Items</option>' +
+        cats.map(c => `<option value="${c}">${getCategoryName(c)}</option>`).join('');
+}
+
+function setFilter(category) {
+    activeFilter = category;
+    showAllItems = false;
+    filterButtonsContainer.querySelectorAll('.filter-btn').forEach(btn => {
+        const on = btn.dataset.filter === category;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', String(on));
+    });
+    categorySelect.value = category;
+    render();
+}
+
+function getVisibleItems() {
+    let items = activeFilter === 'all' ? menuItems : menuItems.filter(i => i.category === activeFilter);
+    const q = searchTerm.trim().toLowerCase();
+    if (q) { items = items.filter(i => (i.name + ' ' + i.description).toLowerCase().includes(q)); }
+    items = [...items];
+    switch (sortSelect.value) {
+        case 'price-low': return items.sort((a, b) => a.price - b.price);
+        case 'price-high': return items.sort((a, b) => b.price - a.price);
+        case 'name': return items.sort((a, b) => a.name.localeCompare(b.name));
+        default: return items; // menu order
     }
 }
 
-// Display Menu Items with branch-specific currency
-function displayMenuItems(items) {
+function render() {
+    const items = getVisibleItems();
     menuItemsContainer.innerHTML = '';
-    
     if (items.length === 0) {
-        menuItemsContainer.innerHTML = '<p class="no-items">No items found in this category.</p>';
+        menuItemsContainer.innerHTML = '<p class="no-items">No items found. Try another category or search.</p>';
         menuToggleBtn.style.display = 'none';
         return;
     }
-
-    const itemsToDisplay = showAllItems ? items : items.slice(0, MENU_PREVIEW_LIMIT);
-
-    itemsToDisplay.forEach(item => {
-        const menuItem = document.createElement('div');
-        menuItem.className = `menu-item ${item.category}`;
-        
-        const currencySymbol = currentBranch === 'sharjah' ? 'AED' : '₹';
-        const priceDisplay = currentBranch === 'sharjah' ? item.price.toFixed(2) : item.price;
-        
-        menuItem.innerHTML = `
-            <div class="menu-item-left">
-                <div class="menu-item-header">
-                    <h3 class="menu-item-name">${item.name}</h3>
-                </div>
-                <p class="menu-item-description">${item.description}</p>
+    const shown = showAllItems ? items : items.slice(0, MENU_PREVIEW_LIMIT);
+    const frag = document.createDocumentFragment();
+    shown.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'menu-item';
+        card.innerHTML = `
+            <div class="menu-item-top">
+                <span class="menu-item-category">${getCategoryName(item.category)}</span>
+                <div class="menu-item-price">${formatINR(item.price)}</div>
             </div>
-            <div class="menu-item-right">
-                <span class="menu-item-category">${getCategoryName(item.category, currentBranch)}</span>
-                <div class="menu-item-price">${currencySymbol} ${priceDisplay}</div>
-            </div>
+            <h3 class="menu-item-name">${escapeHTML(item.name)}</h3>
+            <p class="menu-item-description">${escapeHTML(item.description)}</p>
+            <button type="button" class="menu-add-btn" data-add="${item.id}" aria-label="Add ${escapeHTML(item.name)} to your order">+ Add to order</button>
         `;
-        menuItemsContainer.appendChild(menuItem);
+        frag.appendChild(card);
     });
+    menuItemsContainer.appendChild(frag);
 
     if (items.length > MENU_PREVIEW_LIMIT) {
         menuToggleBtn.style.display = 'inline-flex';
-        menuToggleBtn.textContent = showAllItems ? 'Show less' : 'View all items';
+        menuToggleBtn.textContent = showAllItems ? 'Show less' : `View all ${items.length} items`;
     } else {
         menuToggleBtn.style.display = 'none';
     }
 }
 
-// Filter Menu Items
-function filterMenu(category) {
-    if (category === 'all') {
-        return menuItems;
-    }
-    return menuItems.filter(item => item.category === category);
-}
+// Events
+filterButtonsContainer.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (btn) { setFilter(btn.dataset.filter); }
+});
+categorySelect.addEventListener('change', () => setFilter(categorySelect.value));
+sortSelect.addEventListener('change', () => { showAllItems = false; render(); });
+searchInput.addEventListener('input', () => { searchTerm = searchInput.value; showAllItems = false; render(); });
+menuToggleBtn.addEventListener('click', () => { showAllItems = !showAllItems; render(); });
 
-// Sort Menu Items
-function sortMenu(items, sortBy) {
-    const sortedItems = [...items];
-    
-    switch(sortBy) {
-        case 'name':
-            return sortedItems.sort((a, b) => a.name.localeCompare(b.name));
-        case 'price-low':
-            return sortedItems.sort((a, b) => a.price - b.price);
-        case 'price-high':
-            return sortedItems.sort((a, b) => b.price - a.price);
-        default:
-            return sortedItems;
-    }
-}
-
-// Initialize Menu
-function initMenu() {
-    createFilterButtons(currentBranch);
-    let filteredItems = filterMenu('all');
-    let sortedItems = sortMenu(filteredItems, 'name');
-    displayMenuItems(sortedItems);
-}
-
-// Switch the menu to a branch (shared by the menu buttons and the Book Now form)
-function setBranch(branch) {
-    if (branch !== 'sharjah' && branch !== 'taliparamba') return;
-    showAllItems = false;
-    branchButtons.forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-branch') === branch));
-    currentBranch = branch;
-    menuItems = branch === 'sharjah' ? sharjahMenuItems : taliparambaMenuItems;
-
-    // Create new filter buttons for this branch
-    createFilterButtons(branch);
-
-    // Reset to 'all' filter and refresh display
-    displayMenuItems(sortMenu(filterMenu('all'), 'name'));
-    document.dispatchEvent(new CustomEvent('menu:branchchange', { detail: { branch } }));
-}
-
-// Event Listeners for Branch Selection
-branchButtons.forEach(button => {
-    button.addEventListener('click', () => setBranch(button.getAttribute('data-branch')));
+menuItemsContainer.addEventListener('click', e => {
+    const btn = e.target.closest('[data-add]');
+    if (!btn || !window.FruzoOrder) { return; }
+    window.FruzoOrder.add(parseInt(btn.dataset.add, 10));
+    btn.classList.add('is-added');
+    btn.textContent = '\u2713 Added';
+    window.setTimeout(() => { btn.classList.remove('is-added'); btn.textContent = '+ Add to order'; }, 1200);
 });
 
-// Read-only access to the live menu data for other scripts (Book Now form)
+// Read-only access for book.js
 window.FruzoMenu = {
-    getBranch: () => currentBranch,
-    getItems: (branch) => (branch === 'sharjah' ? sharjahMenuItems : taliparambaMenuItems),
+    getItems: () => menuItems,
+    getItem: id => menuItems.find(i => i.id === id) || null,
     getCategoryName: getCategoryName,
-    getCurrency: (branch) => (branch === 'sharjah' ? 'AED' : '\u20B9'),
-    setBranch: setBranch
+    formatINR: formatINR
 };
 
-// Event Listener for Sort Select
-sortSelect.addEventListener('change', () => {
-    showAllItems = false;
-    const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-    let filteredItems = filterMenu(activeFilter);
-    const sortBy = sortSelect.value;
-    let sortedItems = sortMenu(filteredItems, sortBy);
-    displayMenuItems(sortedItems);
-});
-
-menuToggleBtn.addEventListener('click', () => {
-    showAllItems = !showAllItems;
-    const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-    let filteredItems = filterMenu(activeFilter);
-    const sortBy = sortSelect.value;
-    let sortedItems = sortMenu(filteredItems, sortBy);
-    displayMenuItems(sortedItems);
-});
-
-// Mobile Menu Toggle
+// Mobile nav
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     const open = navMenu.classList.toggle('active');
     hamburger.setAttribute('aria-expanded', String(open));
 });
-
-// Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -450,20 +297,33 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Initialize the website
-document.addEventListener('DOMContentLoaded', () => {
-    initMenu();
-    
-    // Compact navbar on scroll + expose its height so anchors/mobile menu clear it
+// Init
+createFilterControls();
+render();
+
+(function navSetup() {
     const navbar = document.querySelector('.navbar');
     const syncNavHeight = () => document.documentElement.style.setProperty('--nav-h', navbar.offsetHeight + 'px');
     const onNavScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 50);
     window.addEventListener('scroll', onNavScroll, { passive: true });
     onNavScroll();
     syncNavHeight();
-    if (window.ResizeObserver) {
-        new ResizeObserver(syncNavHeight).observe(navbar);
-    } else {
-        window.addEventListener('resize', syncNavHeight);
+    if (window.ResizeObserver) { new ResizeObserver(syncNavHeight).observe(navbar); }
+    else { window.addEventListener('resize', syncNavHeight); }
+
+    // Highlight the nav link of the section in view
+    const links = [...document.querySelectorAll('.nav-menu .nav-link')];
+    const map = new Map(links.map(l => [l.getAttribute('href').slice(1), l]));
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(en => {
+                if (en.isIntersecting) {
+                    links.forEach(l => l.classList.remove('is-active'));
+                    const l = map.get(en.target.id);
+                    if (l) { l.classList.add('is-active'); }
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        map.forEach((_, id) => { const s = document.getElementById(id); if (s) { io.observe(s); } });
     }
-});
+})();
